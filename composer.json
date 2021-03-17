@@ -1,0 +1,58 @@
+{
+    "name": "kiranajudiya/laravel-cdn",
+    "description": "Content Delivery Network (CDN) Package for Laravel",
+    "type": "library",
+    "license": "MIT",
+    "keywords": [
+        "laravel",
+        "CDN",
+        "upload",
+        "AWS",
+        "S3",
+        "AWS S3",
+        "amazon",
+        "Assets Upload",
+        "Content Delivery Network",
+        "AWS CloudFront"
+      ],
+    "authors": [
+        {
+            "name": "Kiran Ajudiya",
+            "email": "ajudiyabalam@gmail.com"
+        }
+    ],
+    "require": {
+        "php": "^7.2.5",
+        "illuminate/support": "5.0.*|5.1.*|5.2.*|5.3.*|5.4.*|5.5.*|5.6.*|5.7.*|6.*|7.*|8.*",
+        "illuminate/config": "5.0.*|5.1.*|5.2.*|5.3.*|5.4.*|5.5.*|5.6.*|5.7.*|6.*|7.*|8.*",
+        "symfony/finder": "2.*|3.*|4.*|5.*",
+        "symfony/console": "2.*|3.*|4.*|5.*",
+        "aws/aws-sdk-php": "~3.0",
+        "ext-json": "*"
+    },
+    "require-dev": {
+        "roave/security-advisories": "dev-master",
+        "phpunit/phpunit" : "^8.5.8|^9.3.3",
+        "orchestra/testbench": "~3.8.0|^4.0|^5.0|^6.0"
+     },
+     "autoload": {
+        "classmap": [
+            "tests/TestCase.php",
+            "src/KiranAjudiya/laravelCDN/Exceptions"
+        ],
+      "psr-4": {
+            "KiranAjudiya\\laravelCDN\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+          "providers": [
+            "KiranAjudiya\\laravelCDN\\CdnServiceProvider"
+          ],
+          "aliases": {
+            "CDN": "KiranAjudiya\\laravelCDN\\Facades\\CdnFacadeAccessor"
+          }
+        }
+      },
+    "minimum-stability": "stable"
+}
