@@ -18,7 +18,6 @@ use KiranAjudiya\laravelCDN\Validators\CdnFacadeValidator;
 use KiranAjudiya\laravelCDN\Validators\Contracts\ValidatorInterface;
 use KiranAjudiya\laravelCDN\Validators\Validator;
 use KiranAjudiya\laravelCDN\Commands\PushCommand;
-use KiranAjudiya\laravelCDN\Commands\EmptyCommand;
 
 /**
  * Class CdnServiceProvider.
@@ -116,12 +115,6 @@ class CdnServiceProvider extends ServiceProvider
 
         $this->commands('cdn.push');
 
-        $this->app->singleton('cdn.empty', function ($app) {
-            return $app->make(EmptyCommand::class);
-        });
-
-        $this->commands('cdn.empty');
-
         // facade bindings:
         //-----------------
 
@@ -129,12 +122,6 @@ class CdnServiceProvider extends ServiceProvider
         $this->app->singleton('CDN', static function ($app) {
             return $app->make(CdnFacade::class);
         });
-
-        // Shortcut so developers don't need to add an Alias in app/config/app.php
-//        $this->app->booting(function () {
-//            $loader = \Illuminate\Foundation\AliasLoader::getInstance();
-//            $loader->alias('Cdn', 'KiranAjudiya\laravelCDN\Facades\CdnFacadeAccessor');
-//        });
     }
 
     /**

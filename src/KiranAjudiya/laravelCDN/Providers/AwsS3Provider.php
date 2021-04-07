@@ -199,7 +199,6 @@ class AwsS3Provider extends Provider
                         'Metadata' => $this->default['providers']['aws']['s3']['metadata'],
                         'Expires' => $this->default['providers']['aws']['s3']['expires'],
                     ]);
-//                var_dump(get_class($command));exit();
 
 
                     $this->s3_client->execute($command);
@@ -305,7 +304,7 @@ class AwsS3Provider extends Provider
         // state or apply any php function on it." because the returned is
         // a copy of the original variable. this prevent this error:
         // Indirect modification of overloaded property
-        // Vinelab\Cdn\Providers\AwsS3Provider::$buckets has no effect
+        // KiranAjudiya\laravelCDN\Providers\AwsS3Provider::$buckets has no effect
         $bucket = $this->buckets;
 
         return rtrim(key($bucket), '/');

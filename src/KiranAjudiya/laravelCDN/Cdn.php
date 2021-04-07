@@ -83,18 +83,4 @@ class Cdn implements CdnInterface
 
         return $provider->upload($this->asset_holder->getAssets());
     }
-
-    /**
-     * Will be called from the KiranAjudiya\laravelCDN\EmptyCommand class on Fire().
-     */
-    public function emptyBucket()
-    {
-        // return the configurations from the config file
-        $configurations = $this->helper->getConfigurations();
-
-        // return an instance of the corresponding Provider concrete according to the configuration
-        $provider = $this->provider_factory->create($configurations);
-
-        return $provider->emptyBucket();
-    }
 }

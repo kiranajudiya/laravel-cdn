@@ -118,13 +118,6 @@ class CdnFacade implements CdnFacadeInterface
             throw new EmptyPathException('Path does not exist.');
         }
 
-        // Add version number
-        //$path = str_replace(
-        //    "build",
-        //    $this->configurations['providers']['aws']['s3']['version'],
-        //    $path
-        //);
-
         // remove slashes from begging and ending of the path
         // and append directories if needed
         $clean_path = $prepend.$this->helper->cleanPath($path);
